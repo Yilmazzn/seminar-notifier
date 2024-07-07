@@ -2,8 +2,6 @@ import os
 import time
 
 import fire
-import requests
-from bs4 import BeautifulSoup
 from loguru import logger
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -12,7 +10,6 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
 
 URL = "https://portal.wiwi.kit.edu/ys"
 TERM = "Zöllner"
