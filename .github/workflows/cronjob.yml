@@ -36,4 +36,4 @@ jobs:
         python ./src/main.py \
           --url "https://portal.wiwi.kit.edu/ys" \
           --faculty "KIT-Fakultät für Wirtschaftswissenschaften" \
-          --filter-text "${{ github.event_name == 'schedule' && "Zöllner" || inputs.filter_text }}"
+          --filter-text "${{ github.event_name == 'schedule' && 'Zöllner' || inputs.filter_text }}"
