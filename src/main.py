@@ -24,11 +24,15 @@ FILTER_MASTER_CHECKBOX_XPATH = '//*[@id="filterMaster"]'
 FILTER_DIPLOM_CHECKBOX_XPATH = '//*[@id="filterDiplom"]'
 TABLE_XPATH = '/html/body/main/section[3]/div/div/div/div[3]/div/table'
 
-options = Options()
-# options.add_argument("--headless=new")
+options = webdriver.ChromeOptions()
+options.add_argument("--no-sandbox")
+options.add_argument("--headless=new")
+options.add_argument('--ignore-ssl-errors=yes')
+options.add_argument('--ignore-certificate-errors')
 
-service = ChromeService(ChromeDriverManager().install())
-driver = webdriver.Chrome(service=service, options=options)
+# service = ChromeService(ChromeDriverManager().install())
+driver = webdriver.Remote(command_executor="http://localhost:4444/wd/hub", options=options)
+
 
 def _wait_for_element_presence(xpath: str):
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, xpath)))

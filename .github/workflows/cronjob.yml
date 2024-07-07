@@ -10,12 +10,16 @@ on:
     - cron: '0 10 * * *'  # Runs every day at 10:00 UTC
 
 jobs:
-  build:
+  scrape:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+
+    - name: Run Selenium docker
+      run: docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" selenium/standalone-chrome:latest
+
 
     - name: Set up Python
       uses: actions/setup-python@v5
