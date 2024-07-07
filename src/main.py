@@ -25,7 +25,7 @@ FILTER_DIPLOM_CHECKBOX_XPATH = '//*[@id="filterDiplom"]'
 TABLE_XPATH = '/html/body/main/section[3]/div/div/div/div[3]/div/table'
 
 options = Options()
-options.add_argument("--headless=new")
+# options.add_argument("--headless=new")
 
 service = ChromeService(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=options)
