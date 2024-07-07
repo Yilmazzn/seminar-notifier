@@ -12,7 +12,6 @@ from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.common.by import By
 
 URL = "https://portal.wiwi.kit.edu/ys"
-TERM = "Zöllner"
 
 SIGN_IN_LINK_XPATH = '//*[@id="main_content"]/div/div[2]/a'
 USERNAME_INPUT_XPATH = '//*[@id="username"]'
@@ -26,7 +25,7 @@ FILTER_DIPLOM_CHECKBOX_XPATH = '//*[@id="filterDiplom"]'
 TABLE_XPATH = '/html/body/main/section[3]/div/div/div/div[3]/div/table'
 
 options = Options()
-options.add_argument("--headless=new")
+# options.add_argument("--headless=new")
 
 service = ChromeService(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=options)
